@@ -19,8 +19,7 @@ body {
   font-family: 'Inter var', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  color: #ddd;
-  background: #12071f;
+  background: black;
 }
 
 a {
@@ -29,12 +28,9 @@ a {
   text-decoration: none;
 }
 
-svg {
-  fill: #ddd;
-}
 
 h1 {
-  background: linear-gradient(30deg, #c850c0, #ffcc70);
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
