@@ -2,12 +2,20 @@ import { useState, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial } from '@react-three/drei'
 import * as random from 'maath/random/dist/maath-random.esm'
-
+import Contact from './components/contact'
+import  Projects from './components/projects'
 export default function App() {
   const [currentSection, setCurrentSection] = useState('Personal') 
   const [fastForward, setFastForward] = useState(false) 
 
   const sections = ['Personal', 'Projects', 'Education', 'Contact', 'Resume']
+  const sectionText = {
+    Personal: 'Welcome to my personal space!',
+    Projects: '',
+    Education: 'Here is my educational journey.',
+    Contact: '',
+    Resume: 'View my professional resume.',
+  }
 
   const handleSectionChange = (section) => {
     setCurrentSection(section)
@@ -38,6 +46,27 @@ export default function App() {
           </button>
         ))}
       </div>
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          textAlign: 'center',
+          color: 'white',
+          zIndex: 5,
+          width: '80%',
+        }}
+      >
+        {currentSection === 'Projects' && <Projects />}
+        {currentSection === 'Contact' && <Contact />}
+        {currentSection !== 'Projects' && currentSection !== 'Contact' && (
+          <>
+            <h1 style={{ fontSize: '3rem', margin: 0, padding: 0 }}>{currentSection}</h1>
+            <p style={{ fontSize: '1.5rem', margin: '10px 0', padding: 0 }}>{sectionText[currentSection]}</p>
+          </>
+        )}
+      </div>
 
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Stars fastForward={fastForward} currentSection={currentSection} />
@@ -45,7 +74,7 @@ export default function App() {
 
       <div style={{ position: 'absolute', bottom: '20px', right: '20px', zIndex: 10 }}>
         <p style={{ color: '#fff', fontSize: '13px' }}>
-          Developed with ReactThreeFiber
+          Developed with ReactThreeFiber 
         </p>
       </div>
     </>
