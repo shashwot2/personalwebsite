@@ -3,10 +3,12 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial } from '@react-three/drei'
 import * as random from 'maath/random/dist/maath-random.esm'
 import Contact from './components/contact'
-import  Projects from './components/projects'
+import Projects from './components/projects'
 export default function App() {
   const [currentSection, setCurrentSection] = useState('Personal') 
   const [fastForward, setFastForward] = useState(false) 
+  const [visibleText, setVisibleText] = useState('Personal')
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
   const sections = ['Personal', 'Projects', 'Education', 'Contact', 'Resume']
   const sectionText = {
@@ -16,11 +18,17 @@ export default function App() {
     Contact: '',
     Resume: 'View my professional resume.',
   }
+const handleSectionChange = (section) => {
+    if (section === currentSection) return // Skipping if the section is the same
+    setFastForward(true) 
+    setIsTransitioning(true)
 
-  const handleSectionChange = (section) => {
-    setCurrentSection(section)
-    setFastForward(true)
-    setTimeout(() => setFastForward(false), 2000)
+    setTimeout(() => {
+      setCurrentSection(section)
+      setVisibleText(section)
+      setIsTransitioning(false)
+      setFastForward(false) 
+    }, 700)
   }
 
   return (
@@ -56,14 +64,16 @@ export default function App() {
           color: 'white',
           zIndex: 5,
           width: '80%',
+          opacity: isTransitioning ? 0 : 1,
+          transition: 'opacity 1s ease-in-out',
         }}
       >
-        {currentSection === 'Projects' && <Projects />}
-        {currentSection === 'Contact' && <Contact />}
-        {currentSection !== 'Projects' && currentSection !== 'Contact' && (
+        {visibleText === 'Projects' && <Projects />}
+        {visibleText === 'Contact' && <Contact />}
+        {visibleText !== 'Projects' && visibleText !== 'Contact' && (
           <>
-            <h1 style={{ fontSize: '3rem', margin: 0, padding: 0 }}>{currentSection}</h1>
-            <p style={{ fontSize: '1.5rem', margin: '10px 0', padding: 0 }}>{sectionText[currentSection]}</p>
+            <h1 style={{ fontSize: '3rem', margin: 0, padding: 0 }}>{visibleText}</h1>
+            <p style={{ fontSize: '1.5rem', margin: '10px 0', padding: 0 }}>{sectionText[visibleText]}</p>
           </>
         )}
       </div>
