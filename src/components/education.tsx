@@ -30,12 +30,6 @@ export default function Education() {
           <p style={{ fontSize: '1.2rem', marginBottom: '10px' }}>
             <strong>Concentration:</strong> Software Design and Engineering
           </p>
-          <p style={{ fontSize: '1.2rem', marginBottom: '10px' }}>
-            <strong>Relevant Coursework:</strong> Programming Languages, Software Development
-          </p>
-          <p style={{ fontSize: '1.2rem' }}>
-            <strong>Achievements:</strong> Gamma Nu Eta (Honor Society)
-          </p>
         </div>
         <div style={{ textAlign: 'right', fontSize: '1.2rem' }}>
           <p style={{ marginBottom: '10px' }}>

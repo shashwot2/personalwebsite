@@ -6,6 +6,7 @@ import Contact from './components/contact'
 import Projects from './components/projects'
 import Personal from './components/personal'
 import Education from './components/education'
+import Experience from './components/experience'
 
 export default function App() {
   const [currentSection, setCurrentSection] = useState('Personal') 
@@ -72,6 +73,7 @@ const handleSectionChange = (section) => {
         }}
       >
         {visibleText === 'Personal' &&  <Personal />}
+        {visibleText === 'Experience' && <Experience />}
         {visibleText === 'Projects' && <Projects />}
         {visibleText === 'Education' && <Education />}
         {visibleText === 'Contact' && <Contact />}

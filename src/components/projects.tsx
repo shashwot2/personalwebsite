@@ -1,9 +1,10 @@
 export default function Projects() {
   const projectData = [
+    { title: 'Engrave', description: `Flashcard Application. Also winner of instructors choice award :)`, link: '#'},
     { title: 'SlashyDBot', description: 'Discord bot for playing music using FFMPeg', link: '#' },
-    { title: 'Remote Job Scheduler', description: 'Google-Calendar like Project for scheduling remote applications. Made For Masary Studios, (NO LINK, contact me for demo permission)', link: '#' },
-    { title: 'ChessClock', description: 'Basic Chessclock with configuration options written in Svelte', link: '#' },
     { title: 'Chatty', description: 'Chatroom written in Rust', link: '#' },
+    { title: 'ChessClock', description: 'Basic Chessclock with configuration options written in Svelte', link: '#' },
+    { title: 'Remote Job Scheduler', description: 'Google-Calendar like Project for scheduling remote applications. Made For Masary Studios, (NO LINK, contact me for demo permission)', link: '#' },
   ]
 
   return (
