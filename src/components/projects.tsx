@@ -4,11 +4,6 @@ export default function Projects() {
     { title: 'Remote Job Scheduler', description: 'Google-Calendar like Project for scheduling remote applications. Made For Masary Studios, (NO LINK, contact me for demo permission)', link: '#' },
     { title: 'ChessClock', description: 'Basic Chessclock with configuration options written in Svelte', link: '#' },
     { title: 'Chatty', description: 'Chatroom written in Rust', link: '#' },
-    { title: 'Chatty', description: 'Chatroom written in Rust', link: '#' },
-    { title: 'Chatty', description: 'Chatroom written in Rust', link: '#' },
-    { title: 'Chatty', description: 'Chatroom written in Rust', link: '#' },
-    { title: 'Chatty', description: 'Chatroom written in Rust', link: '#' },
-    { title: 'Chatty', description: 'Chatroom written in Rust', link: '#' },
   ]
 
   return (
@@ -17,7 +12,7 @@ export default function Projects() {
         <div
           key={index}
           style={{
-            padding: '25px',
+            padding: '35px',
             background: '#222',
             borderRadius: '10px',
             color: '#fff',

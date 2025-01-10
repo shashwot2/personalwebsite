@@ -4,17 +4,20 @@ import { Points, PointMaterial } from '@react-three/drei'
 import * as random from 'maath/random/dist/maath-random.esm'
 import Contact from './components/contact'
 import Projects from './components/projects'
+import Personal from './components/personal'
+import Education from './components/education'
+
 export default function App() {
   const [currentSection, setCurrentSection] = useState('Personal') 
   const [fastForward, setFastForward] = useState(false) 
   const [visibleText, setVisibleText] = useState('Personal')
   const [isTransitioning, setIsTransitioning] = useState(false)
 
-  const sections = ['Personal', 'Projects', 'Education', 'Contact', 'Resume']
+  const sections = ['Personal', 'Education', 'Experience', 'Projects', 'Contact', 'Resume']
   const sectionText = {
-    Personal: 'Welcome to my personal space!',
+    Personal: '',
     Projects: '',
-    Education: 'Here is my educational journey.',
+    Education: '',
     Contact: '',
     Resume: 'View my professional resume.',
   }
@@ -68,11 +71,12 @@ const handleSectionChange = (section) => {
           transition: 'opacity 1s ease-in-out',
         }}
       >
+        {visibleText === 'Personal' &&  <Personal />}
         {visibleText === 'Projects' && <Projects />}
+        {visibleText === 'Education' && <Education />}
         {visibleText === 'Contact' && <Contact />}
         {visibleText !== 'Projects' && visibleText !== 'Contact' && (
           <>
-            <h1 style={{ fontSize: '3rem', margin: 0, padding: 0 }}>{visibleText}</h1>
             <p style={{ fontSize: '1.5rem', margin: '10px 0', padding: 0 }}>{sectionText[visibleText]}</p>
           </>
         )}
@@ -114,7 +118,7 @@ function Stars({ fastForward, currentSection }) {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color={sectionColors[currentSection]}
+          color={'#ffa0e0'}
           size={0.005}
           sizeAttenuation={true}
           depthWrite={false}
