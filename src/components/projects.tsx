@@ -1,10 +1,13 @@
 export default function Projects() {
   const projectData = [
-    { title: 'Engrave', description: `Flashcard Application. Also winner of instructors choice award :)`, link: '#'},
-    { title: 'SlashyDBot', description: 'Discord bot for playing music using FFMPeg', link: '#' },
+    { title: 'Engrave', description: `Flashcard Android Application. Also winner of instructors choice award :)`, link: 'https://github.com/shashwot2/Engrave'},
+    { title: 'SlashyDBot', description: 'Discord bot for playing music using FFMPeg', link: 'https://github.com/shashwot2/Slashydbot' },
     { title: 'Chatty', description: 'Chatroom written in Rust', link: '#' },
+    { title: 'Mixologics', description: 'Android application for cocktail recipes', link: '#' },
     { title: 'ChessClock', description: 'Basic Chessclock with configuration options written in Svelte', link: '#' },
     { title: 'Remote Job Scheduler', description: 'Google-Calendar like Project for scheduling remote applications. Made For Masary Studios, (NO LINK, contact me for demo permission)', link: '#' },
+    { title: 'Economic Analysis of FOSS trends of public companies', description: 'Data Analysis of public companies correlated with their github contributions with models like multivariate regression, KNN, Random Forest', link: 'https://github.com/shashwot2/Economic-analysis-of-FOSS-trends' },
+    { title: 'Wayk', description: 'Maps app for walking with Reportable obstructions like Waze. Developed for HackRPI 2024', link: 'https://github.com/WaykRPI/Wayk' },
   ]
 
   return (
