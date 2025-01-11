@@ -38,21 +38,38 @@ export default function App() {
 
   return (
     <>
-      <div style={{ position: 'absolute', top: '20px', left: '50%', transform: 'translateX(-50%)', zIndex: 10 }}>
+      <div
+        style={{
+          position: 'absolute',
+          top: '20px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 10,
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '10px',
+          padding: '10px',
+          background: 'rgba(0, 0, 0, 0.7)',
+          borderRadius: '10px',
+          maxWidth: '90%',
+        }}
+      >
         {sections.map((section) => (
           <button
             key={section}
             onClick={() => handleSectionChange(section)}
             style={{
-              padding: '10px 20px',
-              margin: '0 10px',
-              fontSize: '16px',
+              padding: '10px 15px',
+              margin: '5px 0',
+              fontSize: '14px',
               background: currentSection === section ? '#ffa0e0' : '#444',
               color: 'white',
               border: 'none',
               borderRadius: '5px',
               cursor: 'pointer',
               transition: 'background 0.3s',
+              whiteSpace: 'nowrap',
             }}
           >
             {section}
