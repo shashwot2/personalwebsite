@@ -11,7 +11,7 @@ export default function Projects() {
   ]
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
+    <div style={{ height:'80vh', overflowY:'auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
       {projectData.map((project, index) => (
         <div
           key={index}
