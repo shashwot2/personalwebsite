@@ -9,8 +9,8 @@ import Education from './components/education'
 import Experience from './components/experience'
 
 export default function App() {
-  const [currentSection, setCurrentSection] = useState('Personal') 
-  const [fastForward, setFastForward] = useState(false) 
+  const [currentSection, setCurrentSection] = useState('Personal')
+  const [fastForward, setFastForward] = useState(false)
   const [visibleText, setVisibleText] = useState('Personal')
   const [isTransitioning, setIsTransitioning] = useState(false)
 
@@ -20,18 +20,19 @@ export default function App() {
     Projects: '',
     Education: '',
     Contact: '',
-    Resume: 'View my professional resume.',
+    Resume: 'Download my professional resume below.',
   }
-const handleSectionChange = (section) => {
+
+  const handleSectionChange = (section) => {
     if (section === currentSection) return // Skipping if the section is the same
-    setFastForward(true) 
+    setFastForward(true)
     setIsTransitioning(true)
 
     setTimeout(() => {
       setCurrentSection(section)
       setVisibleText(section)
       setIsTransitioning(false)
-      setFastForward(false) 
+      setFastForward(false)
     }, 700)
   }
 
@@ -72,14 +73,34 @@ const handleSectionChange = (section) => {
           transition: 'opacity 1s ease-in-out',
         }}
       >
-        {visibleText === 'Personal' &&  <Personal />}
+        {visibleText === 'Personal' && <Personal />}
         {visibleText === 'Experience' && <Experience />}
         {visibleText === 'Projects' && <Projects />}
         {visibleText === 'Education' && <Education />}
         {visibleText === 'Contact' && <Contact />}
-        {visibleText !== 'Projects' && visibleText !== 'Contact' && (
+        {visibleText === 'Resume' && (
           <>
-            <p style={{ fontSize: '1.5rem', margin: '10px 0', padding: 0 }}>{sectionText[visibleText]}</p>
+            <p style={{ fontSize: '1.5rem', margin: '10px 0', padding: 0 }}>{sectionText.Resume}</p>
+            <a
+              href="./src/assets/resume.pdf"
+              download="Shashwot_KC_Resume.pdf"
+              style={{
+                display: 'inline-block',
+                marginTop: '20px',
+                padding: '10px 20px',
+                fontSize: '16px',
+                background: 'grey',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '5px',
+                fontWeight: 'bold',
+                transition: 'background 0.3s',
+              }}
+              onMouseOver={(e) => (e.target.style.background = '#38a6d4')}
+              onMouseOut={(e) => (e.target.style.background = 'grey')}
+            >
+              Resume
+            </a>
           </>
         )}
       </div>
@@ -90,7 +111,7 @@ const handleSectionChange = (section) => {
 
       <div style={{ position: 'absolute', bottom: '20px', right: '20px', zIndex: 10 }}>
         <p style={{ color: '#fff', fontSize: '13px' }}>
-          Developed with ReactThreeFiber 
+          Developed with ReactThreeFiber
         </p>
       </div>
     </>
@@ -120,7 +141,7 @@ function Stars({ fastForward, currentSection }) {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color={'#ffa0e0'}
+          color={sectionColors[currentSection]}
           size={0.005}
           sizeAttenuation={true}
           depthWrite={false}

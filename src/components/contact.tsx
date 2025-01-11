@@ -11,13 +11,13 @@ export default function Contact() {
         </li>
         <li>
           <strong>LinkedIn:</strong>{' '}
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/shashwot-kc/" target="_blank" rel="noopener noreferrer">
             My LinkedIn Profile
           </a>
         </li>
         <li>
-          <strong>GitHub:</strong>{' '}
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <strong>GitHub:</strong>{''}
+          <a href="https://github.com/shashwot2" target="_blank" rel="noopener noreferrer">
             My GitHub Profile
           </a>
         </li>
