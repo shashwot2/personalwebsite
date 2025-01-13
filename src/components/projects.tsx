@@ -52,7 +52,7 @@ export default function Projects() {
     },
   ]
 
-  const handleImageClick = (image) => {
+  const handleImageClick = (image: any) => {
     setEnlargedImage(image)
   }
 

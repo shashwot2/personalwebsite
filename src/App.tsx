@@ -1,12 +1,14 @@
 import { useState, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial } from '@react-three/drei'
-import * as random from 'maath/random/dist/maath-random.esm'
+import * as random from "maath/random"
 import Contact from './components/contact'
 import Projects from './components/projects'
 import Personal from './components/personal'
 import Education from './components/education'
 import Experience from './components/experience'
+import * as THREE from 'three';
+
 
 export default function App() {
   const [currentSection, setCurrentSection] = useState('Personal')
@@ -23,7 +25,7 @@ export default function App() {
     Resume: 'Download my professional resume below.',
   }
 
-  const handleSectionChange = (section) => {
+  const handleSectionChange = (section: string) => {
     if (section === currentSection) return // Skipping if the section is the same
     setFastForward(true)
     setIsTransitioning(true)
@@ -113,8 +115,8 @@ export default function App() {
                 fontWeight: 'bold',
                 transition: 'background 0.3s',
               }}
-              onMouseOver={(e) => (e.target.style.background = '#38a6d4')}
-              onMouseOut={(e) => (e.target.style.background = 'grey')}
+              onMouseOver={(e) => ((e.target as HTMLElement).style.background = '#38a6d4')}
+              onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'grey')}
             >
               Resume
             </a>
@@ -134,31 +136,28 @@ export default function App() {
     </>
   )
 }
-
-function Stars({ fastForward, currentSection }) {
-  const ref = useRef()
-  const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.5 }))
-
-  useFrame((state, delta) => {
+function Stars({ fastForward, currentSection }: { fastForward: boolean; currentSection: string }) {
+  const ref = useRef<THREE.Points>(null);
+  const [sphere] = useState(() => Float32Array.from(random.inSphere(new Float32Array(5000), { radius: 1.5 })));
+  useFrame((_, delta) => {
     const speedMultiplier = fastForward ? 18 : 1
-    ref.current.rotation.x -= (delta / 10) * speedMultiplier
-    ref.current.rotation.y -= (delta / 15) * speedMultiplier
+    ref.current!.rotation.x -= (delta / 10) * speedMultiplier;
+    ref.current!.rotation.y -= (delta / 15) * speedMultiplier;
   })
 
-  const sectionColors = {
+ const sectionColors: { [key: string]: string } = {
     Personal: '#ffa0e0',
     Projects: '#00ffcc',
     Education: '#ffcc00',
     Contact: '#ff4444',
     Resume: '#44ccff',
-  }
-
+  };  
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
       <Points ref={ref} positions={sphere} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color={sectionColors[currentSection]}
+          color={sectionColors[currentSection as keyof typeof sectionColors]}
           size={0.005}
           sizeAttenuation={true}
           depthWrite={false}
