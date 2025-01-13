@@ -1,50 +1,24 @@
-# React + TypeScript + Vite
+# Personal Website with React, React Three Fiber, and Three.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a personal portfolio website built using React, React Three Fiber, and Three.js. The site features an interactive 3D starfield background, multiple sections showcasing personal details, education, experience, projects, and a downloadable resume.
 
-Currently, two official plugins are available:
+This is adapted from one of the examples listed on https://r3f.docs.pmnd.rs/getting-started/examples (Gatsby Stars example)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
+- **Interactive 3D Starfield**: A rotating starfield that changes color based on the active section.
+- **Dynamic Navigation**: Seamless transitions between sections with highlighted active buttons.
+- **Downloadable Resume**: Allows users to download a professional resume.
+- **Responsive Design**: Optimized for various screen sizes and devices.
+- **Built with React Three Fiber**: Leveraging the power of Three.js and React for 3D effects.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Tech Stack
+- **React**: Frontend framework for building UI.
+- **React Three Fiber**: Declarative Three.js using React.
+- **@react-three/drei**: Helper components for Three.js.
+- **maath/random**: Used for generating random starfield positions.
+- **TypeScript**: Ensuring type safety and better developer experience.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
