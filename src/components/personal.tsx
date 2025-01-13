@@ -17,7 +17,7 @@ export default function Personal() {
         A passionate full-stack developer
       </h2>
       <img
-        src="./src/assets/shashwotkc.jpg"
+        src="/shashwotkc.jpg"
         alt="Shashwot KC picture"
         style={{
           width: '200px',

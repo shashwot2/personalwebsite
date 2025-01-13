@@ -23,7 +23,7 @@ export default function Projects() {
       title: 'Wayk', 
       description: 'Maps app using Expo and React Native for walking with reportable obstructions like Waze. Developed for HackRPI 2024', 
       link: 'https://github.com/WaykRPI/Wayk', 
-      image: '/src/assets/wayk.png' 
+      image: '/wayk.png' 
     },
     { 
       title: 'Mixologics', 

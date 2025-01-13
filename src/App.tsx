@@ -101,7 +101,7 @@ export default function App() {
           <>
             <p style={{ fontSize: '1.5rem', margin: '10px 0', padding: 0 }}>{sectionText.Resume}</p>
             <a
-              href="/src/assets/resume.pdf"
+              href="/resume.pdf"
               download="Shashwot_KC_Resume.pdf"
               style={{
                 display: 'inline-block',
