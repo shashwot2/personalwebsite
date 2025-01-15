@@ -7,6 +7,7 @@ import Projects from './components/projects'
 import Personal from './components/personal'
 import Education from './components/education'
 import Experience from './components/experience'
+import Hamburger from './components/hamburger'
 import * as THREE from 'three';
 
 
@@ -15,6 +16,10 @@ export default function App() {
   const [fastForward, setFastForward] = useState(false)
   const [visibleText, setVisibleText] = useState('Personal')
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [hamburgerOpen, setHamburgerOpen] = useState(false)
+  const toggleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen)
+  }
 
   const sections = ['Personal', 'Education', 'Experience', 'Projects', 'Contact', 'Resume']
   const sectionText = {
@@ -40,6 +45,17 @@ export default function App() {
 
   return (
     <>
+      <div className="hamburger">
+        <Hamburger
+          isOpen={hamburgerOpen}
+          toggleMenu={toggleHamburger}
+          currentSection={currentSection}
+          handleSectionChange={(section) => {
+            handleSectionChange(section); 
+            setHamburgerOpen(false);
+          }}
+        />
+      </div>
       <div
         style={{
           position: 'absolute',
@@ -61,18 +77,7 @@ export default function App() {
           <button
             key={section}
             onClick={() => handleSectionChange(section)}
-            style={{
-              padding: '10px 15px',
-              margin: '5px 0',
-              fontSize: '14px',
-              background: currentSection === section ? '#ffa0e0' : '#444',
-              color: 'white',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              transition: 'background 0.3s',
-              whiteSpace: 'nowrap',
-            }}
+            className={`button ${currentSection === section ? 'active' : ''}`}
           >
             {section}
           </button>
@@ -145,7 +150,7 @@ function Stars({ fastForward, currentSection }: { fastForward: boolean; currentS
     ref.current!.rotation.y -= (delta / 15) * speedMultiplier;
   })
 
- const sectionColors: { [key: string]: string } = {
+  const sectionColors: { [key: string]: string } = {
     Personal: '#ffa0e0',
     Projects: '#00ffcc',
     Education: '#ffcc00',

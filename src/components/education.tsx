@@ -8,11 +8,18 @@ export default function Education() {
         fontFamily: "'Inter var', sans-serif", 
       }}
     >
-      <h1 style={{ fontSize: '3rem', textAlign: 'center', marginBottom: '30px' }}>Education</h1>
+      <h1
+        style={{
+          fontSize: 'clamp(1rem, 6vw, 3rem)',
+          textAlign: 'center',
+          marginBottom: '30px',
+        }}
+      >
+        Education
+      </h1>
       
       <div
         style={{
-          marginBottom: '40px',
           padding: '20px',
           borderRadius: '10px',
           boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.5)',
@@ -23,15 +30,37 @@ export default function Education() {
         }}
       >
         <div>
-          <h2 style={{ fontSize: '1.8rem', marginBottom: '10px' }}>Master of Science in Information Technology</h2>
-          <p style={{ fontSize: '1.2rem', marginBottom: '10px' }}>
+          <h2
+            style={{
+              fontSize: 'clamp(1rem, 4vw, 1.8rem)',
+              marginBottom: '10px',
+            }}
+          >
+            Master of Science in Information Technology
+          </h2>
+          <p
+            style={{
+              fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
+              marginBottom: '10px',
+            }}
+          >
             <strong>Institution:</strong> Rensselaer Polytechnic Institute, Troy, New York
           </p>
-          <p style={{ fontSize: '1.2rem', marginBottom: '10px' }}>
+          <p
+            style={{
+              fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)', 
+              marginBottom: '10px',
+            }}
+          >
             <strong>Concentration:</strong> Software Design and Engineering
           </p>
         </div>
-        <div style={{ textAlign: 'right', fontSize: '1.2rem' }}>
+        <div
+          style={{
+            textAlign: 'right',
+            fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
+          }}
+        >
           <p style={{ marginBottom: '10px' }}>
             <strong>GPA:</strong> 3.87/4.0
           </p>
@@ -51,22 +80,49 @@ export default function Education() {
         }}
       >
         <div>
-          <h2 style={{ fontSize: '1.8rem', marginBottom: '10px' }}>Bachelor of Science in Computer Science</h2>
-          <p style={{ fontSize: '1.2rem', marginBottom: '10px' }}>
+          <h2
+            style={{
+              fontSize: 'clamp(1.1rem, 4vw, 1.8rem)',
+              marginBottom: '10px',
+            }}
+          >
+            Bachelor of Science in Computer Science
+          </h2>
+          <p
+            style={{
+              fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
+              marginBottom: '10px',
+            }}
+          >
             <strong>Institution:</strong> Webster University, Bangkok, Thailand
           </p>
-          <p style={{ fontSize: '1.2rem', marginBottom: '10px' }}>
+          <p
+            style={{
+              fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
+              marginBottom: '10px',
+            }}
+          >
             <strong>Honors:</strong> Summa Cum Laude, Departmental Scholarship
           </p>
-          <p style={{ fontSize: '1.2rem', marginBottom: '10px' }}>
+          <p
+            style={{
+              fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)', 
+              marginBottom: '10px',
+            }}
+          >
             <strong>Leadership Positions:</strong> President, IT Club (Jan 2020 - Aug 2021)
           </p>
         </div>
-        <div style={{ textAlign: 'right', fontSize: '1.2rem' }}>
+        <div
+          style={{
+            textAlign: 'right',
+            fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
+          }}
+        >
           <p>Aug 2018 - Aug 2021</p>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
