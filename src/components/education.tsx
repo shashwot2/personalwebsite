@@ -2,127 +2,118 @@ export default function Education() {
   return (
     <div
       style={{
-        padding: '40px', 
+        padding: 'clamp(5px, 5vw, 40px)',
         boxSizing: 'border-box',
         color: '#fff',
-        fontFamily: "'Inter var', sans-serif", 
+        fontFamily: "'Inter var', sans-serif",
       }}
     >
       <h1
         style={{
-          fontSize: 'clamp(1rem, 6vw, 3rem)',
+          fontSize: 'clamp(1.1rem, 6vw, 3rem)',
           textAlign: 'center',
-          marginBottom: '30px',
+          marginBottom: 'clamp(1px, 5vw, 30px)',
         }}
       >
         Education
       </h1>
-      
-      <div
-        style={{
-          padding: '20px',
-          borderRadius: '10px',
-          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.5)',
-          display: 'grid',
-          gridTemplateColumns: '1fr auto',
-          columnGap: '20px',
-          alignItems: 'start',
-        }}
-      >
-        <div>
-          <h2
-            style={{
-              fontSize: 'clamp(1rem, 4vw, 1.8rem)',
-              marginBottom: '10px',
-            }}
-          >
-            Master of Science in Information Technology
-          </h2>
-          <p
-            style={{
-              fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
-              marginBottom: '10px',
-            }}
-          >
-            <strong>Institution:</strong> Rensselaer Polytechnic Institute, Troy, New York
-          </p>
-          <p
-            style={{
-              fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)', 
-              marginBottom: '10px',
-            }}
-          >
-            <strong>Concentration:</strong> Software Design and Engineering
-          </p>
-        </div>
+
+      {[
+        {
+          title: 'Master of Science in Information Technology',
+          institution: 'Rensselaer Polytechnic Institute, Troy, New York',
+          concentration: 'Software Design and Engineering',
+          gpa: '3.87/4.0',
+          duration: 'Aug 2023 - Dec 2024',
+        },
+        {
+          title: 'Bachelor of Science in Computer Science',
+          institution: 'Webster University, Bangkok, Thailand',
+          honors: 'Summa Cum Laude, Departmental Scholarship',
+          leadership: 'President, IT Club (Jan 2020 - Aug 2021)',
+          duration: 'Aug 2018 - Aug 2021',
+        },
+      ].map((edu, index) => (
         <div
+          key={index}
           style={{
-            textAlign: 'right',
-            fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
+            padding: 'clamp35px, 4vw, 20px)',
+            borderRadius: 'clamp(3px, 1vw, 10px)',
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.5)',
+            marginBottom: 'clamp(3px, 4vw, 40px)',
+            display: 'grid',
+            gridTemplateColumns: '1fr auto',
+            columnGap: 'clamp(3px, 3vw, 20px)',
+            alignItems: 'start',
           }}
         >
-          <p style={{ marginBottom: '10px' }}>
-            <strong>GPA:</strong> 3.87/4.0
-          </p>
-          <p>Aug 2023 - Dec 2024</p>
-        </div>
-      </div>
-      
-      <div
-        style={{
-          padding: '20px',
-          borderRadius: '10px',
-          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.5)',
-          display: 'grid',
-          gridTemplateColumns: '1fr auto',
-          columnGap: '20px',
-          alignItems: 'start',
-        }}
-      >
-        <div>
-          <h2
+          <div>
+            <h2
+              style={{
+                fontSize: 'clamp(0.7rem, 4vw, 1.8rem)',
+                marginBottom: 'clamp(3px, 2vw, 10px)',
+              }}
+            >
+              {edu.title}
+            </h2>
+            <p
+              style={{
+                fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
+                marginBottom: 'clamp(3px, 1.5vw, 10px)',
+              }}
+            >
+              <strong>Institution:</strong> {edu.institution}
+            </p>
+            {edu.concentration && (
+              <p
+                style={{
+                  fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
+                  marginBottom: 'clamp(3px, 1.5vw, 10px)',
+                }}
+              >
+                <strong>Concentration:</strong> {edu.concentration}
+              </p>
+            )}
+            {edu.honors && (
+              <p
+                style={{
+                  fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
+                  marginBottom: 'clamp(3px, 1.5vw, 10px)',
+                }}
+              >
+                <strong>Honors:</strong> {edu.honors}
+              </p>
+            )}
+            {edu.leadership && (
+              <p
+                style={{
+                  fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
+                  marginBottom: 'clamp(3px, 1.5vw, 10px)',
+                }}
+              >
+                <strong>Leadership Positions:</strong> {edu.leadership}
+              </p>
+            )}
+          </div>
+          <div
             style={{
-              fontSize: 'clamp(1.1rem, 4vw, 1.8rem)',
-              marginBottom: '10px',
-            }}
-          >
-            Bachelor of Science in Computer Science
-          </h2>
-          <p
-            style={{
+              textAlign: 'right',
               fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
-              marginBottom: '10px',
             }}
           >
-            <strong>Institution:</strong> Webster University, Bangkok, Thailand
-          </p>
-          <p
-            style={{
-              fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
-              marginBottom: '10px',
-            }}
-          >
-            <strong>Honors:</strong> Summa Cum Laude, Departmental Scholarship
-          </p>
-          <p
-            style={{
-              fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)', 
-              marginBottom: '10px',
-            }}
-          >
-            <strong>Leadership Positions:</strong> President, IT Club (Jan 2020 - Aug 2021)
-          </p>
+            {edu.gpa && (
+              <p
+                style={{
+                  marginBottom: 'clamp(5px, 1.5vw, 10px)',
+                }}
+              >
+                <strong>GPA:</strong> {edu.gpa}
+              </p>
+            )}
+            <p>{edu.duration}</p>
+          </div>
         </div>
-        <div
-          style={{
-            textAlign: 'right',
-            fontSize: 'clamp(0.8rem, 2.5vw, 1.2rem)',
-          }}
-        >
-          <p>Aug 2018 - Aug 2021</p>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
-
