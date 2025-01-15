@@ -9,6 +9,7 @@ import Education from './components/education'
 import Experience from './components/experience'
 import Hamburger from './components/hamburger'
 import * as THREE from 'three';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 
 export default function App() {
@@ -45,6 +46,7 @@ export default function App() {
 
   return (
     <>
+      <SpeedInsights />
       <div className="hamburger">
         <Hamburger
           isOpen={hamburgerOpen}
