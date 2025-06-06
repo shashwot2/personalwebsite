@@ -22,13 +22,6 @@ export default function App() {
   }
 
   const sections = ['Personal', 'Education', 'Projects', 'Contact']
-  const sectionText = {
-    Personal: '',
-    Projects: '',
-    Education: '',
-    Contact: '',
-    Resume: 'Download my professional resume below.',
-  }
 
   const handleSectionChange = (section: string) => {
     if (section === currentSection) return // Skipping if the section is the same
