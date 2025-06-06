@@ -9,7 +9,7 @@ export default function Hamburger({
   currentSection: string;
   handleSectionChange: (section: string) => void;
 }) {
-  const sections = ['Personal', 'Education', 'Experience', 'Projects', 'Contact', 'Resume'];
+  const sections = ['Personal', 'Education', 'Projects', 'Contact'];
 
   return (
     <>

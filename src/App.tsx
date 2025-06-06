@@ -6,7 +6,6 @@ import Contact from './components/contact'
 import Projects from './components/projects'
 import Personal from './components/personal'
 import Education from './components/education'
-import Experience from './components/experience'
 import Hamburger from './components/hamburger'
 import * as THREE from 'three';
 import { SpeedInsights } from "@vercel/speed-insights/react"
@@ -22,7 +21,7 @@ export default function App() {
     setHamburgerOpen(!hamburgerOpen)
   }
 
-  const sections = ['Personal', 'Education', 'Experience', 'Projects', 'Contact', 'Resume']
+  const sections = ['Personal', 'Education', 'Projects', 'Contact']
   const sectionText = {
     Personal: '',
     Projects: '',
@@ -100,35 +99,9 @@ export default function App() {
         }}
       >
         {visibleText === 'Personal' && <Personal />}
-        {visibleText === 'Experience' && <Experience />}
         {visibleText === 'Projects' && <Projects />}
         {visibleText === 'Education' && <Education />}
         {visibleText === 'Contact' && <Contact />}
-        {visibleText === 'Resume' && (
-          <>
-            <p style={{ fontSize: '1.5rem', margin: '10px 0', padding: 0 }}>{sectionText.Resume}</p>
-            <a
-              href="/resume.pdf"
-              download="Shashwot_KC_Resume.pdf"
-              style={{
-                display: 'inline-block',
-                marginTop: '20px',
-                padding: '10px 20px',
-                fontSize: '16px',
-                background: 'grey',
-                color: 'white',
-                textDecoration: 'none',
-                borderRadius: '5px',
-                fontWeight: 'bold',
-                transition: 'background 0.3s',
-              }}
-              onMouseOver={(e) => ((e.target as HTMLElement).style.background = '#38a6d4')}
-              onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'grey')}
-            >
-              Resume
-            </a>
-          </>
-        )}
       </div>
 
       <Canvas camera={{ position: [0, 0, 1] }}>

@@ -10,12 +10,6 @@ export default function Contact() {
           <strong>Email:</strong> <a href="mailto:shashwot_07@hotmail.com">shashwot_07@hotmail.com</a>
         </li>
         <li>
-          <strong>LinkedIn:</strong>{' '}
-          <a href="https://www.linkedin.com/in/shashwot-kc/" target="_blank" rel="noopener noreferrer">
-            My LinkedIn Profile
-          </a>
-        </li>
-        <li>
           <strong>GitHub:</strong>{''}
           <a href="https://github.com/shashwot2" target="_blank" rel="noopener noreferrer">
             My GitHub Profile
