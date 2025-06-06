@@ -24,14 +24,12 @@ export default function Education() {
           institution: 'Rensselaer Polytechnic Institute, Troy, New York',
           concentration: 'Software Design and Engineering',
           gpa: '3.87/4.0',
-          duration: 'Aug 2023 - Dec 2024',
         },
         {
           title: 'Bachelor of Science in Computer Science',
           institution: 'Webster University, Bangkok, Thailand',
           honors: 'Summa Cum Laude, Departmental Scholarship',
-          leadership: 'President, IT Club (Jan 2020 - Aug 2021)',
-          duration: 'Aug 2018 - Aug 2021',
+          leadership: 'President, IT Club',
         },
       ].map((edu, index) => (
         <div
@@ -110,7 +108,6 @@ export default function Education() {
                 <strong>GPA:</strong> {edu.gpa}
               </p>
             )}
-            <p>{edu.duration}</p>
           </div>
         </div>
       ))}

@@ -85,7 +85,10 @@ export default function Projects() {
               textAlign: 'center',
             }}
           >
-            {project.image && (
+            <h3 style={{ marginBottom: '10px' }}>{project.title}</h3>
+            <p style={{ fontSize: '0.9rem', marginBottom: '15px' }}>{project.description}</p>
+            
+             {project.image && (
               <img 
                 src={project.image} 
                 alt={`${project.title} thumbnail`} 
@@ -99,8 +102,6 @@ export default function Projects() {
                 onClick={() => handleImageClick(project.image)}
               />
             )}
-            <h3 style={{ marginBottom: '10px' }}>{project.title}</h3>
-            <p style={{ fontSize: '0.9rem', marginBottom: '15px' }}>{project.description}</p>
             {project.link ? (
               <a
                 href={project.link}
